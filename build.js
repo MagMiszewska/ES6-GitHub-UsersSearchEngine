@@ -52,6 +52,11 @@ var App = function (_React$Component) {
                 "div",
                 null,
                 React.createElement(
+                    "h1",
+                    null,
+                    "GitHub Users Search Engine"
+                ),
+                React.createElement(
                     "form",
                     { onSubmit: function onSubmit(event) {
                             return _this3.onSubmit(event);
@@ -91,7 +96,7 @@ var UsersList = function (_React$Component2) {
         value: function render() {
             return React.createElement(
                 "div",
-                null,
+                { className: "users__list" },
                 this.users
             );
         }
@@ -121,11 +126,11 @@ var User = function (_React$Component3) {
         value: function render() {
             return React.createElement(
                 "div",
-                null,
-                React.createElement("img", { src: this.props.user.avatar_url, style: { maxWidth: '100px' } }),
+                { className: "users__item" },
+                React.createElement("img", { className: "users__image", src: this.props.user.avatar_url, style: { maxWidth: '100px' } }),
                 React.createElement(
                     "a",
-                    { href: this.props.user.html_url, target: "_blank" },
+                    { className: "users__name", href: this.props.user.html_url, target: "_blank" },
                     this.props.user.login
                 )
             );

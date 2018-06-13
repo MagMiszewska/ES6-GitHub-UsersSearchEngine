@@ -21,8 +21,9 @@ class App extends React.Component {
     }
 
     render() {
-        return (
+        return (            
             <div>
+                <h1>GitHub Users Search Engine</h1>
                 <form onSubmit={event => this.onSubmit(event)}>
                     <label htmlFor="searchText">Search by user name</label>
                     <input
@@ -44,7 +45,7 @@ class UsersList extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="users__list">
                 {this.users}
             </div>
         );
@@ -54,9 +55,9 @@ class UsersList extends React.Component {
 class User extends React.Component {
     render() {
       return (
-        <div>
-          <img src={this.props.user.avatar_url} style={{maxWidth: '100px'}}/>
-          <a href={this.props.user.html_url} target="_blank">{this.props.user.login}</a>
+        <div className="users__item">
+          <img className="users__image" src={this.props.user.avatar_url} style={{maxWidth: '100px'}}/>
+          <a className="users__name" href={this.props.user.html_url} target="_blank">{this.props.user.login}</a>
         </div>
       );
     }
